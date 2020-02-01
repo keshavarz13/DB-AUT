@@ -1,0 +1,48 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+        <a class="active" href="./ui.html">User order</a>
+        <a href="./anonymous.html">Anonymous order</a>
+        <a href="./adduser.html">Manage users</a>
+        <a href="./adddelivery.html">Manage deliveries</a>
+        <a href="./addFood.html">Manage list of foods</a>
+        <a href="./addMarket.html">Manage markets</a>
+        <a href="./managerReport.html">Manager reports</a>
+        <a href="./userReport.html">User reports</a>
+        <a href="./matOrder.html">Material order</a>
+        <a href="./manageTable.html">Manage tables</a>
+        <a href="./logs.html">Show logs</a>
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+        <form action="http://localhost:18888/addUserSalesReciept" method="POST" style="border:1px solid #ccc">
+          <div class="container">
+            <h1>CREATE RECIEPT</h1>
+            <hr>
+
+              <h2 id="number" style="border-bottom: 1px solid rgb(199, 199, 199);">Reciept id : </h2>
+              
+              <label for="national-code"><b>User Id</b></label>
+              <input type="text" placeholder="Enter your address" name="UserId" >
+              
+              <label for="psw"><b>Delivery ID</b></label>
+              <input type="text" placeholder="Enter delivery ID" name="DeliveryId" required>
+
+              <label for="psw"><b>Address Name</b></label>
+              <input type="text" placeholder="Enter delivery ID" name="AdName" required>
+              
+              <div class="clearfix">
+                  <button type="button" class="cancelbtn" href ="./adduser.html">Cancel</button>
+                  <button type="submit" class="signupbtn">SUBMIT<input type="submit" value="" style="visibility: hidden;"> </button>
+              </div>
+          </div>
+        </form>
+      </div>
+</body>
+<script src="./anonymous.js"></script>

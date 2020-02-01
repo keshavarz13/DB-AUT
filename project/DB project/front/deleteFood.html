@@ -1,0 +1,43 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+        <a href="./ui.html">Home</a>
+        <a href="./addFood.html">Add Food</a>
+        <a class="active" href="./deleteFood.html">Delete Food</a>
+        <a href="./editFood.html">Edit Food</a>
+        
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+        <form action="http://localhost:18888/deleteFood" method="POST" style="border:1px solid #ccc">
+            <div class="container">
+              <h1>DELETE FOOD</h1>
+              <hr>
+              <table id = "show">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                </tr>
+              </table>
+
+              <label for="national-code"><b>ID</b></label>
+              <input type="text" placeholder="Enter ID" name="ID" required>
+
+              <div class="clearfix">
+                <button type="button" class="cancelbtn" href ="./adduser.html">Cancel</button>
+              <button type="submit" class="signupbtn"><input type="submit" value="" style="visibility: hidden;"> SUBMIT</button>
+              </div>
+            </div>
+        </form>
+
+
+</body>
+
+<script src="./deleteFood.js"></script>

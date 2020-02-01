@@ -1,0 +1,43 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+      <a href="./ui.html">Home</a>
+      <a href="./adddelivery.html">Add Delivery</a>
+      <a class="active" href="./deletedelivery.html">Delete Delivery</a>
+      <a href="./editdelivery.html">Edit Deliveryer</a>
+        
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+        <form action="http://localhost:18888/deletedelivery" method="POST" style="border:1px solid #ccc">
+            <div class="container">
+              <h1>DELETE DELIVERY</h1>
+              <p>Please fill in this form to delete an account.</p>
+              <hr>
+              <table id = "show">
+                <tr>
+                  <th>NatinalCode</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>PhoneNumber</th>
+                </tr>
+              </table>
+
+              <label for="national-code"><b>National Code</b></label>
+              <input type="text" placeholder="Enter National Code" name="national_code" required>
+
+              <div class="clearfix">
+                <button type="button" class="cancelbtn" href ="./adduser.html">Cancel</button>
+                <button type="submit" class="signupbtn"><input type="submit" value="" style="visibility: hidden;"> SUBMIT</button>
+              </div>
+            </div>
+        </form>
+      </div>
+</body>
+<script src="./deletedelivery.js"></script>

@@ -1,0 +1,47 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+        <a href="./ui.html">User order</a>
+        <a class="active" href="./anonymous.html">Create Reciept</a>
+        <a href="./selectFood.html">Select Food</a>
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+        <form action="http://localhost:18888/addAnonymousSalesReciept" method="POST" style="border:1px solid #ccc">
+            <div class="container">
+              <h1>CREATE  ANONYMOUS  RECIEPT</h1>
+              <hr>
+
+              <table id = "show">
+                <tr>
+                  <th>NatinalCode</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>PhoneNumber</th>
+                </tr>
+              </table>
+
+                <h2 id="number" style="border-bottom: 1px solid rgb(199, 199, 199);">Reciept id : </h2>
+                <label for="psw"><b>Delivery ID</b></label>
+                <input type="text" placeholder="Enter delivery ID" name="DeliveryId" required>
+
+                <label for="national-code"><b>Address</b></label>
+                <input type="text" placeholder="Enter your address" name="Address" >
+          
+                
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn" href ="./adduser.html">Cancel</button>
+                    <button type="submit" class="signupbtn">SUBMIT<input type="submit" value="" style="visibility: hidden;"> </button>
+                </div>
+            </div>
+        </form>
+      </div>
+</body>
+<script src="./anonymous.js"></script>
+<script src="./anonymous2.js"></script>

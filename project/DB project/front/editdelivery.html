@@ -1,0 +1,47 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+      <a href="./ui.html">Home</a>
+      <a href="./adddelivery.html">Add Delivery</a>
+      <a href="./deletedelivery.html">Delete Delivery</a>
+      <a class="active" href="./editdelivery.html">Edit Delivery</a>
+        
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+        <form action="http://localhost:18888/editdelivery" method="POST" style="border:1px solid #ccc">
+            <div class="container">
+              <h1>EDIT DELIVERY</h1>
+              <p>Please fill in this form to edit an account.</p>
+              <hr>
+          
+              <label for="national-code"><b>National Code</b></label>
+              <input type="text" placeholder="Enter National Code" name="national_code" required>
+          
+              <label for="psw"><b>First name</b></label>
+              <input type="text" placeholder="Enter first name" name="first_name" required>
+          
+              <label for="psw-repeat"><b>Last name</b></label>
+              <input type="text" placeholder="Enter last name" name="last_namet" required>
+              
+              <label for="psw-repeat"><b>Phone number</b></label>
+              <input type="text" placeholder="Enter phone number " name="phone_number" required>
+
+              <label for="psw-repeat"><b>Age Of Birth</b></label>
+              <input type="text" placeholder="Enter age of your birth" name="age" required>
+
+              <div class="clearfix">
+                <button type="button" class="cancelbtn" href ="./adduser.html">Cancel</button>
+                <button type="submit" class="signupbtn"><input type="submit" value="" style="visibility: hidden;"> SUBMIT</button>
+              </div>
+            </div>
+        </form>
+
+
+</body>

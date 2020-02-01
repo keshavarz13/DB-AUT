@@ -1,0 +1,235 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+        <a href="./ui.html">User order</a>
+        <a href="./anonymous.html">Anonymous order</a>
+        <a href="./adduser.html">Manage users</a>
+        <a href="./adddelivery.html">Manage deliveries</a>
+        <a href="./addFood.html">Manage list of foods</a>
+        <a href="./addMarket.html">Manage markets</a>
+        <a href="./managerReport.html">Manager reports</a>
+        <a href="./userReport.html">User reports</a>
+        <a href="./matOrder.html">Material order</a>
+        <a href="./manageTable.html">Manage tables</a>
+        <a class="active" href="./logs.html">Show logs</a>
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+            <h1>customer: </h1>
+            <table id = "show1">
+                <tr>
+                  <th>NatinalCode</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>PhoneNumber</th>
+                  <th>BirthYear</th>
+                  <th>logTime</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+
+              <h1>address: </h1>
+              <table id = "show2">
+                <tr>
+                  <th>AddressId</th>
+                  <th>UserId</th>
+                  <th>Address</th>
+                  <th>Name</th>
+                  <th>PhoneNumber</th>
+                  <th>logTime</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+
+              <h1>delivery: </h1>
+              <table id = "show3">
+                <tr>
+                  <th>NatinalCode</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>PhoneNumber</th>
+                  <th>logTime</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+
+              <h1>food: </h1>
+              <table id = "show4">
+                <tr>
+                  <th>FoodId</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>IsActive</th>
+                  <th>logTime</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+
+              <h1>market: </h1>
+              <table id = "show5">
+                <tr>
+                  <th>MarketId</th>
+                  <th>Name</th>
+                  <th>IsActive</th>
+                  <th>logTime</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+
+              <h1>sales receipt: </h1>
+              <table id = "show6">
+                <tr>
+                  <th>ReceiptId</th>
+                  <th>Address</th>
+                  <th>Date</th>
+                  <th>DeliveryId</th>
+                  <th>UserId</th>
+                  <th>logTime</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+
+              <h1>shopping receipt: </h1>
+              <table id = "show7">
+                <tr>
+                  <th>ReceiptId</th>
+                  <th>Date</th>
+                  <th>MarketId</th>
+                  <th>logTime</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+            
+      </div>
+</body>
+<script>
+    async function customer () { 
+    const ul = document.getElementById('show1');
+    const url = 'http://localhost:18888/customerLogs';
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        return data.map(function(row) {
+        ul.innerHTML += 
+        "<tr><td>"+row.NatinalCode+"</td><td>"+row.FirstName+"</td><td>"+row.LastName+"</td><td>"+row.PhoneNumber+"</td><td>"+row.BirthYear+"</td><td>"+row.logTime+"</td><td>"+row.Action+"</td></tr>";
+        })
+    })
+    .catch(function(error) {
+    console.log(error);
+    });   
+    }
+
+    async function address () { 
+    const ul = document.getElementById('show2');
+    const url = 'http://localhost:18888/addressLogs';
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        return data.map(function(row) {
+        ul.innerHTML += 
+        "<tr><td>"+row.AddressId+"</td><td>"+row.UserId+"</td><td>"+row.address+"</td><td>"+row.name+"</td><td>"+row.PhoneNumber+"</td><td>"+row.logTime+"</td><td>"+row.Action+"</td></tr>";
+        })
+    })
+    .catch(function(error) {
+    console.log(error);
+    });   
+    }
+
+    async function delivery () { 
+    const ul = document.getElementById('show3');
+    const url = 'http://localhost:18888/deliveryLogs';
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        return data.map(function(row) {
+        ul.innerHTML += 
+        "<tr><td>"+row.NatinalCode+"</td><td>"+row.FirstName+"</td><td>"+row.LastName+"</td><td>"+row.PhoneNumber+"</td><td>"+row.logTime+"</td><td>"+row.Action+"</td></tr>";
+        })
+    })
+    .catch(function(error) {
+    console.log(error);
+    });   
+    }
+
+    async function food () { 
+    const ul = document.getElementById('show4');
+    const url = 'http://localhost:18888/foodLogs';
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        return data.map(function(row) {
+        ul.innerHTML += 
+        "<tr><td>"+row.FoodId+"</td><td>"+row.Name+"</td><td>"+row.Price+"</td><td>"+row.IsActive+"</td><td>"+row.logTime+"</td><td>"+row.Action+"</td></tr>";
+        })
+    })
+    .catch(function(error) {
+    console.log(error);
+    });   
+    }
+
+    async function market () { 
+    const ul = document.getElementById('show5');
+    const url = 'http://localhost:18888/marketLogs';
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        return data.map(function(row) {
+        ul.innerHTML += 
+        "<tr><td>"+row.MarketId+"</td><td>"+row.Name+"</td><td>"+row.IsActive+"</td><td>"+row.logTime+"</td><td>"+row.Action+"</td></tr>";
+        })
+    })
+    .catch(function(error) {
+    console.log(error);
+    });   
+    }
+
+
+    async function salesRec () { 
+    const ul = document.getElementById('show6');
+    const url = 'http://localhost:18888/salesReceiptLogs';
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        return data.map(function(row) {
+        ul.innerHTML += 
+        "<tr><td>"+row.ReceiptId+"</td><td>"+row.Address+"</td><td>"+row.Date+"</td><td>"+row.DeliveryId+"</td><td>"+row.UserId+"</td><td>"+row.logTime+"</td><td>"+row.Action+"</td></tr>";
+        })
+    })
+    .catch(function(error) {
+    console.log(error);
+    });   
+    }
+
+    
+
+    async function shoppingRec () { 
+    const ul = document.getElementById('show7');
+    const url = 'http://localhost:18888/shoppingReceiptLogs';
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        return data.map(function(row) {
+        ul.innerHTML += 
+        "<tr><td>"+row.ReceiptId+"</td><td>"+row.Date+"</td><td>"+row.MarketId+"</td><td>"+row.logTime+"</td><td>"+row.Action+"</td></tr>";
+        })
+    })
+    .catch(function(error) {
+    console.log(error);
+    });   
+    }
+
+    food();
+    address();
+    delivery();
+    customer();
+    market();
+    salesRec();
+    shoppingRec();
+
+</script>

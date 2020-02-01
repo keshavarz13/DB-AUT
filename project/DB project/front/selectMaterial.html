@@ -1,0 +1,45 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+      <a href="./ui.html">User order</a>
+      <a href="./matOrder.html">Create Reciept</a>
+      <a class="active" href="./selectMaterial.html">Select Material</a>
+    </div>
+      
+      <!-- Page content -->
+      <div class="main">
+        <form action="http://localhost:18888/addMaterialToReciept" method="POST" style="border:1px solid #ccc">
+            <div class="container">
+              <h1>Select Food</h1>
+              <hr>
+
+              <table id = "show">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                </tr>
+              </table>
+
+                <label for="psw"><b>Material Id</b></label>
+                <input type="text" placeholder="Enter delivery ID" name="MaterialId" required>
+
+                <label for="national-code"><b>Reciept Id</b></label>
+                <input type="text" placeholder="Enter your address" name="RecieptId" required >
+          
+                
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn" href ="./adduser.html">Cancel</button>
+                    <button type="submit" class="signupbtn">SUBMIT<input type="submit" value="" style="visibility: hidden;"> </button>
+                </div>
+            </div>
+        </form>
+      </div>
+</body>
+<script src="./selectMaterial.js"></script>
+

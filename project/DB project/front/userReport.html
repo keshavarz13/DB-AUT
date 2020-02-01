@@ -1,0 +1,73 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sidenav">
+        <a href="./ui.html">User order</a>
+        <a href="./Anonymous.html">Anonymous order</a>
+        <a href="./adduser.html">Manage users</a>
+        <a href="./adddelivery.html">Manage deliveries</a>
+        <a href="./addFood.html">Manage list of foods</a>
+        <a href="./addMarket.html">Manage markets</a>
+        <a href="./managerReport.html">Manager reports</a>
+        <a class="active" href="./userReport.html">User reports</a>
+        <a href="./matOrder.html">Material order</a>
+        <a href="./manageTable.html">Manage tables</a>
+        <a href="./logs.html">Show logs</a>
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+        <form style="border:1px solid #ccc">
+            <div class="container">
+              <h1>USER REPORT</h1>
+              <hr>
+              <table id = "show">
+                <tr>
+                  <th>RecieptId</th>
+                  <th>Price</th>
+                </tr>
+              </table>
+
+              <label for="national-code"><b>National code</b></label>
+              <input type="text" placeholder="Enter ID" name="ID" id = "field" required>
+
+              <div class="clearfix">
+                <button type="submit" class="signupbtn1" onclick="myFunction()"><input type="submit" value="" style="visibility: hidden;" > SUBMIT</button>
+              </div>
+            </div>
+        </form>
+
+
+      </div>
+</body>
+<script>
+  
+  async function getData (input){
+    alert("slm");
+      const ul = document.getElementById('show');
+      const url = await 'http://localhost:18888/report/' + input;
+      alert(url);
+      fetch(url)
+      .then((resp) => resp.json())
+      .then(function(data) {
+      return data.map(function(row) {
+          
+      ul.innerHTML += 
+      "<tr><td>"+row.ReceiptId+"</td><td>"+row.price+"</td></tr>";
+      })
+      })
+      .catch(function(error) {
+      console.log(error);
+      }); 
+  }
+
+  async function myFunction() {
+    let input = await document.getElementById("field").value;
+    await getData(input);
+  }
+</script>
+<!-- <script src="./userReport.js"></script> -->
